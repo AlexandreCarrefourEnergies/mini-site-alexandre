@@ -9,7 +9,7 @@ import {
 // =====================================================================
 const PHONE_DISPLAY = "07 68 32 95 02";
 const PHONE_TEL = "+33768329502";
-const CALENDLY_URL = "https://calendly.com/servicenvoie/30min";
+const CALENDLY_URL = "https://calendly.com/alexandre-lead505/20min";
 const HUBSPOT_PORTAL_ID = "00000000";
 const HUBSPOT_FORM_GUID = "00000000-0000-0000-0000-000000000000";
 const GTM_CONTAINER_ID = "GTM-XXXXXXX";
@@ -102,9 +102,9 @@ function calculateLeadScore(data) {
 // EMAILJS — Envoi email vers alexandre.lead505@gmail.com
 // Créer un compte sur emailjs.com, connecter Gmail, remplacer les IDs
 // =====================================================================
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";   // À remplacer sur emailjs.com
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // À remplacer sur emailjs.com
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";   // À remplacer sur emailjs.com
+const EMAILJS_SERVICE_ID = "service_1tr06ov";   // À remplacer sur emailjs.com
+const EMAILJS_TEMPLATE_ID = "wi066k4"; // À remplacer sur emailjs.com
+const EMAILJS_PUBLIC_KEY = "MIJxzpLwMluAgm-Ko";   // À remplacer sur emailjs.com
 
 async function sendEmailLead(data, score) {
   try {
@@ -528,13 +528,15 @@ function AvisSection() {
         </div>
 
         {/* Trustpilot évolutif */}
-        <div className="mt-4 flex items-center justify-between rounded-2xl p-4" style={{ backgroundColor: "#f0f7ff" }}>
+        <a href="https://fr.trustpilot.com/review/avisun.fr" target="_blank" rel="noopener noreferrer"
+          className="mt-4 flex items-center justify-between rounded-2xl p-4"
+          style={{ backgroundColor: "#f0f7ff", textDecoration: "none" }}>
           <div>
             <p className="text-sm font-bold" style={{ color: COLORS.blue }}>⭐ Retrouvez tous nos avis</p>
-            <p className="text-xs text-slate-400">Carrefour Énergies — Avis vérifiés</p>
+            <p className="text-xs text-slate-400">Avisun — Avis clients vérifiés sur Trustpilot</p>
           </div>
-          <span className="rounded-full px-3 py-1 text-xs font-bold text-white" style={{ backgroundColor: COLORS.blue }}>Trustpilot</span>
-        </div>
+          <span className="rounded-full px-3 py-1 text-xs font-bold text-white" style={{ backgroundColor: "#00b67a" }}>Trustpilot →</span>
+        </a>
       </div>
     </section>
   );
