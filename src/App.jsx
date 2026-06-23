@@ -825,11 +825,7 @@ function FunnelView({ stepIndex, data, update, onSelectSingle, onToggleMulti, on
 // =====================================================================
 function BookingView({ onConfirm }) {
   useEffect(() => {
-    const s = document.createElement("script");
-    s.src = "https://assets.calendly.com/assets/external/widget.js";
-    s.async = true;
-    document.body.appendChild(s);
-    return () => { if (document.body.contains(s)) document.body.removeChild(s); };
+    // Calendly widget supprimé — utilisation du lien direct pour meilleure UX mobile
   }, []);
   return (
     <div className="min-h-screen pb-10" style={{ backgroundColor: COLORS.bg }}>
@@ -892,13 +888,26 @@ function ConfirmationView({ data, onRestart }) {
           </div>
         </div>
 
-        {/* Calendly intégré */}
+        {/* Calendly — bouton popup (meilleure UX mobile, pas d'espace blanc) */}
         <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
           <div className="px-4 py-3" style={{ backgroundColor: COLORS.navy }}>
             <p className="text-sm font-bold text-white">📅 Réservez votre créneau maintenant</p>
             <p className="text-xs" style={{ color: COLORS.turquoise }}>Pendant que vous êtes disponible — Alexandre ou Delphine vous rappelle</p>
           </div>
-          <div className="calendly-inline-widget" data-url={CALENDLY_URL} style={{ minWidth: "100%", height: "500px" }} />
+          <div className="p-4">
+            <p className="text-sm text-slate-600 mb-4">Choisissez le créneau qui vous convient le mieux pour votre étude gratuite.</p>
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center justify-center gap-2 rounded-full py-4 text-sm font-extrabold text-white"
+              style={{ backgroundColor: COLORS.turquoise }}
+            >
+              <Calendar size={18} />
+              Choisir mon créneau →
+            </a>
+            <p className="text-center text-xs text-slate-400 mt-3">S'ouvre dans un nouvel onglet • Retour automatique ensuite</p>
+          </div>
         </div>
 
         {/* Message rappel alternatif */}
